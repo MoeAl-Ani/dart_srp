@@ -1,0 +1,26 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+analysis_options.yaml
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+*.g.dart
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+/build/
