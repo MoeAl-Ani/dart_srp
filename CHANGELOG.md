@@ -12,4 +12,4 @@
 
 ## 1.0.3
 
-- Updated license.
+- Updated license
