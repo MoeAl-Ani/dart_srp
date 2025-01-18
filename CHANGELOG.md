@@ -17,3 +17,7 @@
 ## 1.0.4
 
 - Fixed BigInt import
+
+## 1.0.5
+
+- Fixed undefined imports
