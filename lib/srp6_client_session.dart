@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 import 'illegal_argument_exception.dart';
 import 'illegal_state_exception.dart';
 import 'srp6_client_credentials.dart';

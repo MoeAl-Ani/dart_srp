@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:crypto/crypto.dart';
 
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 
 class SRP6Routines {
 

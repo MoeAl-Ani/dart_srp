@@ -1,6 +1,6 @@
 
 import 'URoutine.dart';
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 import 'hex_hashed_routines.dart';
 import 'srp6_crypto_params.dart';
 import 'uroutine_context.dart';

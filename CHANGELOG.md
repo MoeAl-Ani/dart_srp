@@ -13,3 +13,7 @@
 ## 1.0.3
 
 - Updated license
+
+## 1.0.4
+
+- Fixed BigInt import

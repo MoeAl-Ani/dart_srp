@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 import 'xroutine.dart';
 
 class CustomXRoutine extends XRoutine {

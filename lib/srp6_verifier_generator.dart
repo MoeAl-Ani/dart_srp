@@ -1,7 +1,7 @@
 
 import 'dart:convert';
 
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 import 'srp6_crypto_params.dart';
 import 'srp6_routines.dart';
 import 'xroutine.dart';

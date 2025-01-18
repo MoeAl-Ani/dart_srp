@@ -1,5 +1,4 @@
-
-import 'bigInt_helper.dart';
+import 'bigint_helper.dart';
 import 'hex_hashed_routines.dart';
 import 'server_evidence_routine.dart';
 import 'srp6_crypto_params.dart';
