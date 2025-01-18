@@ -1,7 +1,9 @@
 name: dart_srp
 description: JAVA SRP NIMBUS port in dart.
-version: 1.0.1
+homepage: https://infotamia.com
+version: 1.0.3
 repository: https://github.com/MoeAl-Ani/dart_srp
+license: MIT
 
 environment:
   sdk: ^3.0.0
