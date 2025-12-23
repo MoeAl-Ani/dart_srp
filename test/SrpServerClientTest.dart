@@ -1,6 +1,6 @@
+import 'dart:convert';
 import 'dart:math';
 
-import 'package:dart_srp/bigInt_helper.dart';
 import 'package:dart_srp/custom_x_routine.dart';
 import 'package:dart_srp/srp6_client_credentials.dart';
 import 'package:dart_srp/srp6_client_session.dart';
@@ -20,7 +20,9 @@ void main() {
 
   List<SrpUser> users = [];
   for (int i = 1; i <= 10000; i++) {
-    BigInt salt = BigIntHelper.createRandomBigInt().abs();
+    var saltStr = generator.generateRandomSalt(numBytes: 32);
+    BigInt salt = BigInt.parse(utf8.decode(saltStr), radix: 10);
+    //BigInt salt = BigIntHelper.createRandomBigInt().abs();
     String username = randomString(15);
     String password = randomString(20);
     BigInt verifier = generator.generateVerifier(salt, username, password);

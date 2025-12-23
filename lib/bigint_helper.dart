@@ -101,22 +101,13 @@ class BigIntHelper {
   }
 
   /// Returns a random big integer.
-  static BigInt createRandomBigInt() {
-    Random rand = Random();
-    const parts = 16;
-    int combinedVal = 0;
-    // random parts
-    for (var i = 0; i < parts; i++) {
-      int part = rand.nextInt(1<<16); // 2^16
-      // shift the 16bit blocks to the left and append the new block
-      combinedVal <<= 16;
-      combinedVal += part;
+  static BigInt createRandomBigInt({int numBytes = 32}) {
+    final random = Random.secure();
+    final bytes = Uint8List(numBytes);
+    for (var i = 0; i < numBytes; i++) {
+      bytes[i] = random.nextInt(256);
     }
-    BigInt r = BigInt.from(combinedVal);
-    // if (r.isNegative) {
-    //   r = toPositiveBigInt(r);
-    // }
-    return r.abs();
+    return BigIntHelper.decodeBigInt(bytes);
   }
 
   /// convert a signed BigInt to Unsigned BigInt

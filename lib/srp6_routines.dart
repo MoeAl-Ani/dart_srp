@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 
@@ -15,7 +16,12 @@ class SRP6Routines {
 
   static List<int> generateRandomSalt(final int numBytes) {
     Random random = Random.secure();
-    return utf8.encode(random.nextInt(numBytes).toRadixString(10));
+    final bytes = Uint8List(numBytes);
+    for (var i = 0; i < numBytes; i++) {
+      bytes[i] = random.nextInt(256);
+    }
+    BigInt salt = BigIntHelper.decodeBigInt(bytes).abs();
+    return utf8.encode(salt.toRadixString(10));
   }
 
   static BigInt computeX(final Hash digest,
