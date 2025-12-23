@@ -21,3 +21,7 @@
 ## 1.0.5
 
 - Fixed undefined imports
+
+## 1.0.6
+
+- Better salt generation impl.
