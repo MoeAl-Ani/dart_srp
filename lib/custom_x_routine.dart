@@ -17,8 +17,8 @@ class CustomXRoutine extends XRoutine {
     c1.addAll(username);
     c1.addAll(utf8.encode(":"));
     c1.addAll(password);
-    var h1 = BigInt.parse(digest.convert(c1).toString(), radix: 16).toRadixString(16);
-    var saltHexed = BigIntHelper.toPositiveBigInt(BigInt.parse(BigIntHelper.decodeBigInt(Uint8List.fromList(salt)).toString(), radix: 10)).toRadixString(16);
+    var h1 = digest.convert(c1).toString().padLeft(64, '0');
+    var saltHexed = BigIntHelper.toPositiveBigInt(BigInt.parse(BigIntHelper.decodeBigInt(Uint8List.fromList(salt)).toString(), radix: 10)).toRadixString(16).padLeft(64, '0');
     var concat = (saltHexed + h1).toUpperCase();
     var bigIntFromHashValue = BigInt.parse(digest.convert(utf8.encode(concat)).toString(), radix: 16);
     var remainder = bigIntFromHashValue.remainder(N);

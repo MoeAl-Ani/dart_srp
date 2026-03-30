@@ -104,9 +104,9 @@ class SRP6Routines {
       final BigInt A,
       final BigInt B,
       final BigInt S) {
-    List<int> e1 = BigIntHelper.toByteArray(A);
-    List<int> e2 = BigIntHelper.toByteArray(B);
-    List<int> e3 = BigIntHelper.toByteArray(S);
+    List<int> e1 = BigIntHelper.encodeBigInt(A);
+    List<int> e2 = BigIntHelper.encodeBigInt(B);
+    List<int> e3 = BigIntHelper.encodeBigInt(S);
     List<int> res1 = BigIntHelper.concatByteArray(e1,e2);
     List<int> finalRes = BigIntHelper.concatByteArray(res1, e3);
     var digestedValue = digest.convert(finalRes).toString();
@@ -116,9 +116,9 @@ class SRP6Routines {
 
   static BigInt computeServerEvidence(final Hash digest,
       final BigInt A, final BigInt m1, final BigInt S) {
-    List<int> e1 = BigIntHelper.toByteArray(A);
-    List<int> e2 = BigIntHelper.toByteArray(m1);
-    List<int> e3 = BigIntHelper.toByteArray(S);
+    List<int> e1 = BigIntHelper.encodeBigInt(A);
+    List<int> e2 = BigIntHelper.encodeBigInt(m1);
+    List<int> e3 = BigIntHelper.encodeBigInt(S);
     List<int> finalRes = BigIntHelper.concatByteArray(BigIntHelper.concatByteArray(e1, e2), e3);
     var digestedValue = digest.convert(finalRes).toString();
     return BigInt.parse(digestedValue, radix: 16);
