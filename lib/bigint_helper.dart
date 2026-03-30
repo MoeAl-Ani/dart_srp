@@ -14,12 +14,12 @@ class BigIntHelper {
     return result;
   }
 
-  static Uint8List encodeBigInt(BigInt number, {Endian endian = Endian.little}) {
+  static Uint8List encodeBigInt(BigInt number, {Endian endian = Endian.big}) {
 
     int size = (((number.bitLength) / 8) + 1).toInt();
     var result = Uint8List(size);
     for (int i = 0; i < size; i++) {
-      result[endian != Endian.little ? i : size - i - 1] =
+      result[endian == Endian.little ? i : size - i - 1] =
           (number & BigInt.from(0xff)).toInt();
       number = number >> 8;
     }

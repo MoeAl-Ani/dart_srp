@@ -1,3 +1,10 @@
+## 1.1.0
+
+- Fixed Java/Nimbus compatibility: evidence computation (M1/M2) now uses signed byte encoding matching Java's BigInteger.toByteArray().
+- Fixed inverted endianness logic in BigIntHelper.encodeBigInt and aligned default to Endian.big.
+- Fixed hex string padding in CustomXRoutine to preserve leading zeros.
+- Renamed integration test to snake_case and migrated to the test package.
+
 ## 1.0.0
 
 - Initial SRP version.
